@@ -5,13 +5,13 @@ let db = null;
 let isFirebaseActive = false;
 
 // Check if Firebase is configured
-if (
-  typeof firebase !== "undefined" &&
-  typeof FIREBASE_CONFIG !== "undefined" &&
-  FIREBASE_CONFIG.projectId
-) {
+const fbCfg = (typeof FIREBASE_CONFIG !== "undefined" && FIREBASE_CONFIG.projectId) 
+  ? FIREBASE_CONFIG 
+  : ((typeof firebaseConfig !== "undefined" && firebaseConfig.projectId) ? firebaseConfig : null);
+
+if (typeof firebase !== "undefined" && fbCfg) {
   try {
-    firebase.initializeApp(FIREBASE_CONFIG);
+    firebase.initializeApp(fbCfg);
     db = firebase.firestore();
     isFirebaseActive = true;
   } catch (e) {

@@ -4,12 +4,12 @@
 // 2. Click the Web icon (</>) to register a web app and copy the config object below.
 // 3. Go to "Firestore Database" in the sidebar -> "Create database" -> select "Start in test mode".
 // 4. Paste your config values below:
-
-const FIREBASE_CONFIG = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: ""
+const firebaseConfig = {
+  apiKey: "AIzaSyDJ5Rfx1LNcdF3krqPuRD62jRhOBFp2Yy4",
+  authDomain: "tapli-787ff.firebaseapp.com",
+  projectId: "tapli-787ff",
+  storageBucket: "tapli-787ff.firebasestorage.app",
+  messagingSenderId: "289306313066",
+  appId: "1:289306313066:web:a7aaec167fa16bdca7a513"
 };
+const FIREBASE_CONFIG = firebaseConfig;
