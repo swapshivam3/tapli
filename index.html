@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Digital Tapli 🖐️</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖐️</text></svg>">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase SDK (Free tier real-time cloud sync across all phones) -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <h1 id="title">Digital Tapli</h1>
+
+    <div id="topBar">
+      <select id="personSelect" aria-label="Select person"></select>
+      <button id="uploadBtn" type="button">+ Upload</button>
+    </div>
+
+    <div id="stage">
+      <div id="manWrap">
+        <img id="avatar" alt="" draggable="false">
+      </div>
+    </div>
+
+    <div id="counter">Taplis received: <b id="count">0</b></div>
+  </div>
+
+  <canvas id="fx"></canvas>
+  <div id="flash"></div>
+  <div id="combo"></div>
+
+  <!-- Upload Modal -->
+  <div id="modal" class="hidden">
+    <div id="modalBox">
+      <div class="field">
+        <label for="modalPersonSelect">Person</label>
+        <select id="modalPersonSelect"></select>
+      </div>
+
+      <div class="field" id="nameField">
+        <label for="nameInput">Name</label>
+        <input id="nameInput" type="text" placeholder="Enter name" maxlength="30">
+      </div>
+
+      <div class="field">
+        <label>Photos</label>
+        <div id="photoGrid"></div>
+        <label class="filePickerLabel">
+          + Add Photos
+          <input id="fileInput" type="file" accept="image/*" multiple>
+        </label>
+      </div>
+
+      <div class="modalBtns">
+        <button id="saveBtn" class="primary" type="button">Save</button>
+        <button id="closeBtn" class="secondary" type="button">Cancel</button>
+      </div>
+      <button id="deleteBtn" class="danger hidden" type="button">Delete Person</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
